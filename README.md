@@ -31,9 +31,11 @@ should print `The square is 1764`.
 On Windows PowerShell, create the environment with `py -m venv .venv` and activate
 it with `.venv\Scripts\Activate.ps1`. The remaining commands are the same.
 
-## 2. Profile on a GPU
+## 2. Profile on a GPU with NVIDIA Nsight Compute (NCU)
 
-Start with A10; the first run builds the remote image and can take a few minutes.
+These commands run **NVIDIA Nsight Compute (NCU)** to collect GPU kernel hardware
+counters. Start with A10; the first run builds the remote image and can take a few
+minutes.
 
 ```bash
 modal run profile_gpu.py --gpu A10
