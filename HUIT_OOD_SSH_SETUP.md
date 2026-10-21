@@ -14,7 +14,7 @@ ls ~/.ssh/id_ed25519.pub
 If the file exists, continue to step 2. If it doesn’t, create a key:
 
 ```bash
-ssh-keygen -t ed25519 -C "your_email@college.harvard.edu"
+ssh-keygen -t ed25519 -C "your_email@[g|college].harvard.edu"
 ```
 
 Press **Enter** to accept the default location, then follow the prompts to choose
