@@ -1,5 +1,7 @@
 # CS2470 Modal starter: GPU kernel profiling
 
+For access to the academic cluster, see the [HUIT OOD SSH setup guide](HUIT_OOD_SSH_SETUP.md).
+
 Run Python on a remote GPU, collect NVIDIA Nsight Compute (NCU) hardware counters,
 and download the reports to your laptop. You do **not** need a local GPU, CUDA,
 PyTorch, or Hugging Face account for this tutorial.
