@@ -1,0 +1,2 @@
+# Only Modal is needed on your laptop. GPU dependencies live in the remote image.
+modal==1.6.2
