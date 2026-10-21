@@ -96,35 +96,6 @@ A filter that matches nothing can make NCU exit **zero** without a report; this
 starter detects that and fails after downloading the logs. For multi-kernel
 operations, adjust `--launch-count` in `profile_gpu.py` (currently one).
 
-## Costs and troubleshooting
-
-Check current rates and usage:
-
-```bash
-modal billing rates
-modal billing report --for today --resolution h --show-resources
-modal billing summary
-```
-
-Billing reports can take a few minutes to settle and show usage **before credits**.
-Granular reports require an eligible workspace plan; the dashboard is another way
-to check usage. Use the App ID printed by `modal run` to attribute each experiment.
-In our October 2026 tests, two full attention profiles cost roughly **$0.01–$0.11**
-across A10/A100/H100/B200, including retries in some cases. This is an example,
-not a price guarantee: allocation time, replay count, CPU/memory, and storage matter.
-
-- **Clock-lock error:** this starter uses `--clock-control none`, which worked on
-  our Modal GPUs. It does not attempt to change host GPU clock settings.
-- **No kernels profiled:** inspect the log's available kernels and adjust the filter.
-- **Counter permission error:** access depends on the host/workspace; save the log
-  and check with Modal support. Installing NCU alone does not grant permissions.
-- **Missing metrics:** some GPU/interconnect counters may be unavailable even when
-  the kernel report completes. Read warnings before using a metric.
-- **Authentication:** rerun `modal setup`; never commit tokens or credentials.
-
-This tutorial runs **Nsight Compute**, not Nsight Systems. For CPU/GPU timelines,
-use PyTorch Profiler or Nsight Systems in a separate experiment.
-
 References: [Modal setup](https://modal.com/docs/guide/getting-started),
 [GPU selection](https://modal.com/docs/guide/gpu),
 [billing](https://modal.com/docs/guide/billing),
