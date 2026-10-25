@@ -79,6 +79,10 @@ end-to-end inference benchmark. NCU may replay a kernel dozens of times. Measure
 application latency separately without NCU. PyTorch can select different attention
 kernels on different GPUs, so check the kernel name before comparing results.
 
+For GPU power measurements with `nvidia-smi` or Python (`pynvml`), see the
+[GPU power quickstart](GPU_POWER.md). It includes a runnable Modal example and
+CSV downloads.
+
 ## 4. Adapt it for your project
 
 - `hello.py`: minimal example of a local entrypoint calling a remote function.
